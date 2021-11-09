@@ -44,13 +44,6 @@ public class Bug implements ConsoleNotification, Comparable<Bug> {
   }
 
   public void setPriority(int priority) {
-    /*
-    if (priority > 0 && priority <= 5) {
-      this.priority = priority;
-    } else {
-      System.out.println("Niewłaściwe bug priority!");
-    }
-    */
     switch (priority) {
       case 1:
       case 2:
@@ -60,7 +53,7 @@ public class Bug implements ConsoleNotification, Comparable<Bug> {
         this.priority = priority;
         break;
       default: {
-        System.out.println("Niewłaściwie podane bug priority!");
+        throw new IllegalBugPriorityException("Niewłaściwie podane bug priority");
       }
     }
   }

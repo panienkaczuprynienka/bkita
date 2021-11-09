@@ -1,5 +1,7 @@
 package bugs;
 
+import exceptions.IllegalEmailFormatException;
+
 import java.util.Objects;
 
 public class BugReporter implements Comparable<BugReporter> {
@@ -34,11 +36,11 @@ public class BugReporter implements Comparable<BugReporter> {
     this.surname = surname;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(String email) throws IllegalEmailFormatException {
     if (email.contains("@")) {
       this.email = email;
     } else {
-      System.out.println("Niepoprawny adres email!");
+      throw new IllegalEmailFormatException("Podałeś niepoprawny format adresu email!");
     }
   }
 

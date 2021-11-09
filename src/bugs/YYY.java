@@ -115,5 +115,7 @@ public class YYY {
       System.out.println("Klucz to: " + sortedNickEntry.getKey() + " , a wartość to: " + sortedNickEntry.getValue());
     }
 
+
+    bug.setPriority(5);
   }
 }

@@ -13,18 +13,20 @@ public class ZZZ {
       System.out.println("Dziś jednak nie jest czwartek buu");
     }
 
+
     try {
-      File file;
       BufferedReader bufferedReader = new BufferedReader(new FileReader("testfile.txt"));
-    String line = bufferedReader.readLine();
-    while (line!=null){
-      System.out.println(line);
-      line = bufferedReader.readLine();
-    }
+      String line = bufferedReader.readLine();
+      while (line != null) {
+        System.out.println(line);
+        line = bufferedReader.readLine();
+      }
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
+    } finally {
+      System.out.println("Czy sie udalo czy sie nie udalo, ja to tutaj wydrukuję");
     }
 
 
